@@ -12,23 +12,24 @@ interface Data {
 
 export const data: Data[] = [
   {
-    title: 'Easy Accessable',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Acesso Fácil',
+    description: 'Na Escola Casinha Verde, você pode chegar fácil e rápido para aprender brincando!',
     icon: <ArtTrackIcon />,
   },
   {
-    title: 'More Affordable Cost',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Preços Acessíveis',
+    description: 'Oferecemos um ensino de qualidade que cabe no seu bolso, para que todos possam aprender!',
     icon: <AttachMoneyIcon />,
   },
   {
-    title: 'Flexible Study Time',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Horários Flexíveis',
+    description: 'Você pode escolher os melhores horários para estudar e brincar, do jeito que preferir!',
     icon: <LocalLibraryIcon />,
   },
   {
-    title: 'Consultation With Mentor',
-    description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore',
+    title: 'Acompanhamento com Educadores',
+    description: 'Nossos professores estão sempre prontos para ajudar e brincar com você, garantindo que aprenda se divertindo!',
     icon: <ContactSupportIcon />,
-  },
+  }
+  ,
 ]

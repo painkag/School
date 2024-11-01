@@ -102,7 +102,7 @@ const HomePopularCourse: FC = () => {
               }}
             >
               <Typography variant="h1" sx={{ mt: { xs: 0, md: -5 }, fontSize: { xs: 30, md: 48 } }}>
-                Most Popular Courses
+              Aprenda a se expressar através de desenhos e pinturas divertidas!
               </Typography>
             </Box>
           </Grid>
