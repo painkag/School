@@ -43,7 +43,7 @@ const HomeFeature: FC = () => {
           <Grid item xs={12} md={5}>
             <Box sx={{ position: 'relative' }}>
               <Image src="/images/Myphotos/crianca.JPG" width={650} height={678} quality={97} alt="Feature img" />
-              home-feature.png
+              
               <Box
                 sx={{
                   position: 'absolute',
@@ -55,7 +55,9 @@ const HomeFeature: FC = () => {
                   py: 1.4,
                   zIndex: 1,
                   backgroundColor: 'background.paper',
-                  width: 190,
+                  
+                  width: { xs: '140px', sm: '166px' }, // Diminui em telas pequenas
+                  height: { xs: '180px', sm: '196px' },
                 }}
               >
                 <Typography variant="h5" sx={{ mb: 1 }}>

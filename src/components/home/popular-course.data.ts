@@ -32,7 +32,7 @@ export const data: Array<Course> = [
   },
   {
     id: 4,
-    cover: '/images/Myphotos/futbol.JPG',
+    cover: '/images/Myphotos/luta.JPG',
     title: 'Histórias do Mundo: Aprendendo com Diversão',
     rating: 4,
     ratingCount: 12,

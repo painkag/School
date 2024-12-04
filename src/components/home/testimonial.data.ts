@@ -1,4 +1,5 @@
 import type { Testimonial } from '@/interfaces/testimonial'
+import PersonIcon from '@mui/icons-material/Person';
 
 export const data: Array<Testimonial> = [
   {
@@ -10,7 +11,7 @@ export const data: Array<Testimonial> = [
       id: 1,
       name: 'Luis Sera',
       professional: 'Educador',
-      photo: '1.jpg',
+      photo: 'pessoa.png',
     },
   },
   {
@@ -20,9 +21,9 @@ export const data: Array<Testimonial> = [
       'Na Casinha Verde, as crianças aprendem de forma divertida com atividades práticas que estimulam a criatividade e a curiosidade.',
     user: {
       id: 2,
-      name: 'Riski',
+      name: 'Luan',
       professional: 'Professor',
-      photo: '2.jpg',
+      photo: 'pessoa.png',
     },
   },
   {
@@ -32,9 +33,9 @@ export const data: Array<Testimonial> = [
       'As aulas são completas e abrangem diversos temas, proporcionando uma base sólida para o aprendizado e desenvolvimento das crianças.',
     user: {
       id: 3,
-      name: 'Nguyễn Văn',
+      name: 'Maria',
       professional: 'Educador',
-      photo: '3.jpg',
+      photo: 'pessoa.png',
     },
   },
   {
@@ -46,7 +47,7 @@ export const data: Array<Testimonial> = [
       id: 4,
       name: 'Diana Jordan',
       professional: 'Educadora',
-      photo: '4.jpg',
+      photo: 'pessoa.png',
     },
   },
   {
@@ -58,7 +59,7 @@ export const data: Array<Testimonial> = [
       id: 5,
       name: 'Ashley Graham',
       professional: 'Educadora',
-      photo: '5.jpg',
+      photo: 'pessoa.png',
     },
   }
   ,

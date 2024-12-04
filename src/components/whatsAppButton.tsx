@@ -6,9 +6,10 @@ const WhatsAppButton: React.FC = () => {
   return (
     <Box
       component="a"
-      href="https://wa.me/5599999999999" // Substitua pelo número do WhatsApp desejado
+      href="https://wa.me/551239418414?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20algumas%20informações!"  // Substitua pelo número do WhatsApp desejado
       target="_blank"
       rel="noopener noreferrer"
+      // Adiciona o manipulador de clique
       sx={{
         position: 'fixed',
         bottom: 16,

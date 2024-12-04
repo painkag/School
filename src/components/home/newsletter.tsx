@@ -4,6 +4,8 @@ import InputBase from '@mui/material/InputBase'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import { StyledButton } from '../styled-button'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const HomeNewsLetter: FC = () => {
   return (
@@ -19,38 +21,36 @@ const HomeNewsLetter: FC = () => {
           }}
         >
           <Typography variant="h1" component="h2" sx={{ mb: 1, fontSize: { xs: 32, md: 42 } }}>
-            Se inscreva
+            Siga-nos 
           </Typography>
-          <Typography sx={{ mb: 6 }}>Subscribe to our newsletter to get information about our courses.</Typography>
+          <Typography sx={{ mb: 6 }}>Instagram e Facebook</Typography>
 
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              flexDirection: { xs: 'column', md: 'row' },
-              justifyContent: 'space-around',
-              width: { xs: '100%', md: 560 },
-              mx: 'auto',
-            }}
-          >
-            <InputBase
-              sx={{
-                backgroundColor: 'background.paper',
-                borderRadius: 3,
-                width: '100%',
-                height: 48,
-                px: 2,
-                mr: { xs: 0, md: 3 },
-                mb: { xs: 2, md: 0 },
-              }}
-              placeholder="Enter your Email Address"
-            />
-            <Box>
-              <StyledButton disableHoverEffect size="large">
-                Subscribe
-              </StyledButton>
-            </Box>
-          </Box>
+          
+<Box
+  sx={{
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: { xs: 'column', md: 'row' },
+    justifyContent: 'space-around',
+    width: { xs: '100%', md: 560 },
+    mx: 'auto',
+  }}
+>
+  <Box
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: 2, // espaço entre os ícones
+    }}
+  >
+    <a href="https://www.instagram.com/escolacav/" target="_blank" rel="noopener noreferrer">
+      <InstagramIcon sx={{ fontSize: 40, color: '#E1306C' }} />
+    </a>
+    <a href="https://www.facebook.com/escolacasinhaverde" target="_blank" rel="noopener noreferrer">
+      <FacebookIcon sx={{ fontSize: 40, color: '#1877F2' }} />
+    </a>
+  </Box>
+</Box>
         </Box>
       </Container>
     </Box>

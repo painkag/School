@@ -23,7 +23,6 @@ class MyDocument extends Document<DocumentProps> {
 
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.background.paper} />
-
           <meta content="#fbfbfb" name="theme-color" />
           <meta content="#fbfbfb" name="msapplication-navbutton-color" />
           <meta content="#fbfbfb" name="apple-mobile-web-app-status-bar-style" />
@@ -35,6 +34,38 @@ class MyDocument extends Document<DocumentProps> {
             href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap"
             rel="stylesheet"
           />
+
+          {/* Google tag (gtag.js) */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16506400196"></script>
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16506400196');
+            `}
+          </script>
+
+          {/* Event snippet for Visualização de página conversion page */}
+          <script>
+            {`
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16506400196/8cdpCIHjv84ZEMTb7r49',
+                    'value': 1.0,
+                    'currency': 'BRL',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `}
+          </script>
+
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStylesTags}
         </Head>
@@ -50,32 +81,7 @@ class MyDocument extends Document<DocumentProps> {
 // `getInitialProps` belongs to `_document` (instead of `_app`),
 // it's compatible with static-site generation (SSG).
 MyDocument.getInitialProps = async (ctx: DocumentContext) => {
-  // Resolution order
-  //
-  // On the server:
-  // 1. app.getInitialProps
-  // 2. page.getInitialProps
-  // 3. document.getInitialProps
-  // 4. app.render
-  // 5. page.render
-  // 6. document.render
-  //
-  // On the server with error:
-  // 1. document.getInitialProps
-  // 2. app.render
-  // 3. page.render
-  // 4. document.render
-  //
-  // On the client
-  // 1. app.getInitialProps
-  // 2. page.getInitialProps
-  // 3. app.render
-  // 4. page.render
-
   const originalRenderPage = ctx.renderPage
-
-  // You can consider sharing the same emotion cache between all the SSR requests to speed up performance.
-  // However, be aware that it can have global side effects.
   const cache = createEmotionCache()
   const { extractCriticalToChunks } = createEmotionServer(cache)
 
@@ -87,20 +93,16 @@ MyDocument.getInitialProps = async (ctx: DocumentContext) => {
         App: NextComponentType<AppContextType, AppInitialProps, AppPropsType & { emotionCache: EmotionCache }>
       ) =>
         function EnhanceApp(props) {
-          // console.log('props ->', props)
           return <App emotionCache={cache} {...props} />
         },
     })
 
   const initialProps = await Document.getInitialProps(ctx)
-  // This is important. It prevents emotion to render invalid HTML.
-  // See https://github.com/mui/material-ui/issues/26561#issuecomment-855286153
   const emotionStyles = extractCriticalToChunks(initialProps.html)
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
       data-emotion={`${style.key} ${style.ids.join(' ')}`}
       key={style.key}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ))

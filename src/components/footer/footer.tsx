@@ -19,7 +19,7 @@ const Footer: FC = () => {
                 Escola casinha verde
               </Typography>
               <Typography variant="subtitle1" sx={{ letterSpacing: 1, mb: 2 }}>
-                Coursespace is an online learning platform that has been operating since 2018 until now.
+                Rede sociais.
               </Typography>
               <FooterSocialLinks />
             </Box>

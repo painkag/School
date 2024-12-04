@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography'
 import { Link as ScrollLink } from 'react-scroll'
 import { StyledButton } from '@/components/styled-button'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { HandleWhatsClick } from '@/utils/whatsHandle'
 
 interface Exp {
   label: string
@@ -49,6 +50,11 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 }
 
 const HomeHero: FC = () => {
+  const handleClick = (): void => {
+    HandleWhatsClick({ phoneNumber: '551239418414', message: 'Olá! Vim pelo site e gostaria de algumas informações !' });
+  };
+  
+
   return (
     <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
@@ -144,17 +150,20 @@ const HomeHero: FC = () => {
                 </Typography>
               </Box>
               <Box sx={{ '& button': { mr: 2 } }}>
-                <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="contained">
-                    Saiba mais
-                  </StyledButton>
-                </ScrollLink>
-                <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
-                  <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
-                    Assista ao Video
-                  </StyledButton>
-                </ScrollLink>
-              </Box>
+      <StyledButton 
+        color="primary" 
+        size="large" 
+        variant="contained" 
+        onClick={handleClick}
+        >
+        Entre em contato
+      </StyledButton>
+      <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}>
+        <StyledButton color="primary" size="large" variant="outlined" startIcon={<PlayArrowIcon />}>
+          Assista ao Video
+        </StyledButton>
+      </ScrollLink>
+    </Box>
             </Box>
           </Grid>
           <Grid item xs={12} md={5} sx={{ position: 'relative' }}>
