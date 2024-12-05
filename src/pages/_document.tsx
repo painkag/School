@@ -35,41 +35,29 @@ class MyDocument extends Document<DocumentProps> {
             rel="stylesheet"
           />
 
-          {/* Google tag (gtag.js) */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16506400196"></script>
-          <script>
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16506400196');
-            `}
-          </script>
-
-          {/* Event snippet for Visualização de página conversion page */}
-          <script>
-            {`
-              function gtag_report_conversion(url) {
-                var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-16506400196/8cdpCIHjv84ZEMTb7r49',
-                    'value': 1.0,
-                    'currency': 'BRL',
-                    'event_callback': callback
-                });
-                return false;
-              }
-            `}
-          </script>
+          {/* Google Tag Manager */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MDBLRJXD');`,
+            }}
+          />
+          {/* End Google Tag Manager */}
 
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStylesTags}
         </Head>
         <body>
+          {/* Google Tag Manager (noscript) */}
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLRJXD"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
+          {/* End Google Tag Manager (noscript) */}
+
           <Main />
           <NextScript />
         </body>
